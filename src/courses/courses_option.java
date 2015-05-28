@@ -34,8 +34,8 @@ public class courses_option extends javax.swing.JDialog {
                     = stmt.executeQuery("Select * "
                             + "From tbl_course Where crs_id =" + crsid);
             if (rs.next()) {
-                txtCourseCode.setText(rs.getString("crs_Code"));
-                txtCourseName.setText(rs.getString("crs_Name"));
+                txtCourseCode.setText(rs.getString("crs_code"));
+                txtCourseName.setText(rs.getString("crs_name"));
                 txtDescription.setText(rs.getString("crs_descriptiom"));
                 cbxType.setSelectedItem(rs.getString("crs_type"));
                 cbxNumberOfCredits.setSelectedItem(rs.getString("crs_numberOfCredits"));
@@ -199,22 +199,22 @@ public class courses_option extends javax.swing.JDialog {
     }//GEN-LAST:event_txtCourseCodeActionPerformed
 
     private void txtCourseCodeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCourseCodeKeyTyped
-     if (!Character.isDigit(evt.getKeyChar())
-                || txtCourseCode.getText().length() > 5) {
+     if ((!Character.isDigit(evt.getKeyChar())|| txtCourseCode.getText().length() > 5)
+             &&(Character.isDigit(evt.getKeyChar())|| txtCourseCode.getText().length() > 5)) {
             evt.consume();
         }
     }//GEN-LAST:event_txtCourseCodeKeyTyped
 
     private void txtCourseNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCourseNameKeyTyped
-      if (!Character.isDigit(evt.getKeyChar())
-                || txtCourseName.getText().length() > 29) {
+      if ((!Character.isDigit(evt.getKeyChar())|| txtCourseName.getText().length() > 29)
+            &&(Character.isDigit(evt.getKeyChar())|| txtCourseName.getText().length() > 29)  ) {
             evt.consume();
         }
     }//GEN-LAST:event_txtCourseNameKeyTyped
 
     private void txtDescriptionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDescriptionKeyTyped
-     if (!Character.isDigit(evt.getKeyChar())
-                || txtDescription.getText().length() > 249) {
+     if ((!Character.isDigit(evt.getKeyChar())|| txtDescription.getText().length() > 249)
+          &&(Character.isDigit(evt.getKeyChar())|| txtDescription.getText().length() > 249)   ) {
             evt.consume();
         }
     }//GEN-LAST:event_txtDescriptionKeyTyped
@@ -246,7 +246,7 @@ public class courses_option extends javax.swing.JDialog {
                 if(crsid==0){
                        pstmt = con.prepareStatement("Insert Into "
                                 + "tbl_course (crs_code,"
-                                + "crs_Name, crs_descriptiom, "
+                                + "crs_name, crs_descriptiom, "
                                 + "crs_type, crs_numberOfCredits, "
                                 + "crs_lab) "
                                 + "Values ( '" + courseCode + "', "
@@ -256,7 +256,7 @@ public class courses_option extends javax.swing.JDialog {
                 }else{
                     pstmt = con.prepareStatement("Update tbl_course "
                             + "Set crs_code = '" + courseCode + "', "
-                            + "crs_Name = '" + courseName + "', "
+                            + "crs_name = '" + courseName + "', "
                             + "crs_descriptiom = '" + description + "', "
                             + "crs_type = '" + type + "', "
                             + "crs_numberOfCredits= " + numberOfCredits + ", "
