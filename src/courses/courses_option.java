@@ -260,7 +260,7 @@ public class courses_option extends javax.swing.JDialog {
                             + "crs_descriptiom = '" + description + "', "
                             + "crs_type = '" + type + "', "
                             + "crs_numberOfCredits= " + numberOfCredits + ", "
-                            + "crs_lab = '" + lab + "'," 
+                            + "crs_lab = '" + lab + "'" 
                             + "Where crs_id = " + crsid);
                 }
                 pstmt.execute();
