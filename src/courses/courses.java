@@ -33,9 +33,9 @@ public class courses extends javax.swing.JFrame {
         tblCourseList = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : tblCourseQuery.getResultList();
         jScrollPane1 = new javax.swing.JScrollPane();
         TblCourse = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
+        btnModify = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,11 +71,11 @@ public class courses extends javax.swing.JFrame {
         jTableBinding.bind();
         jScrollPane1.setViewportView(TblCourse);
 
-        jButton1.setText("ADD");
+        btnAdd.setText("ADD");
 
-        jButton2.setText("MODIFY");
+        btnModify.setText("MODIFY");
 
-        jButton3.setText("DELETE");
+        btnDelete.setText("DELETE");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,11 +87,11 @@ public class courses extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnAdd)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(btnModify)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(btnDelete)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -100,9 +100,9 @@ public class courses extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)))
+                    .addComponent(btnAdd)
+                    .addComponent(btnModify)
+                    .addComponent(btnDelete)))
         );
 
         bindingGroup.bind();
@@ -147,10 +147,10 @@ public class courses extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TblCourse;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnModify;
     private javax.persistence.EntityManager coursePUEntityManager;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private java.util.List<courses.TblCourse> tblCourseList;
     private javax.persistence.Query tblCourseQuery;
